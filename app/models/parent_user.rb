@@ -1,0 +1,2 @@
+class ParentUser < ApplicationRecord
+end

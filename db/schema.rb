@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_02_21_082414) do
+ActiveRecord::Schema.define(version: 2022_02_21_085447) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
@@ -134,6 +134,7 @@ ActiveRecord::Schema.define(version: 2022_02_21_082414) do
     t.string "google_calendar_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "profile_photo"
     t.index ["email"], name: "index_teacher_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_teacher_users_on_reset_password_token", unique: true
   end

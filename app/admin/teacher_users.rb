@@ -1,5 +1,5 @@
 ActiveAdmin.register TeacherUser do
-
+  config.filters = false  
   # See permitted parameters documentation:
   # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
   #
@@ -55,7 +55,7 @@ ActiveAdmin.register TeacherUser do
       f.input :degree
       f.input :profile_photo, as: :file
       f.input :encrypted_password, label: "Password"
-      f.input :reset_password_token, label: "Confirm Password"
+      #f.input :reset_password_token, label: "Confirm Password"
     end
     f.actions
   end

@@ -1,6 +1,6 @@
 class TeacherUser < ApplicationRecord
   has_one_attached :profile_photo
-  validates :first_name, :last_name, :email, :bio, :degree,:encrypted_password, presence: true
+  validates :first_name, :last_name, :email, :bio, :degree,:password,:password_confirmation, presence: true
   validates :email, uniqueness: true, format: { with: URI::MailTo::EMAIL_REGEXP }
 
   validate :password_requirements_are_met
@@ -15,13 +15,15 @@ class TeacherUser < ApplicationRecord
     }
   
     rules.each do |message, regex|
-      errors.add( :encrypted_password, message ) unless encrypted_password.match( regex )
+      errors.add( :password, message ) unless password.match( regex )
     end
   end
 
   def check_confirm_password
-    if encrypted_password == reset_password_token
+    if password == password_confirmation
       return true
+    else
+      return false
     end
   end
 

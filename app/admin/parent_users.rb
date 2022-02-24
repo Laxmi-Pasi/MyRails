@@ -38,6 +38,9 @@ ActiveAdmin.register ParentUser do
       f.input :phone_number
       f.input :time_zone
       f.input :single_access_tokens
+      f.input :email_1h_reminder
+      f.input :sms_3h_reminder
+      f.input :sms_10m_reminder
     end
     f.actions
   end

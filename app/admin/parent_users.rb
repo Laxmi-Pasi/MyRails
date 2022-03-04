@@ -15,7 +15,6 @@ ActiveAdmin.register ParentUser do
   #   permitted
   # end
   index do
-    selectable_column
     id_column
     column :first_name
     column :last_name
@@ -25,10 +24,10 @@ ActiveAdmin.register ParentUser do
     actions
   end
 
-  # filter :email
-  # filter :current_sign_in_at
-  # filter :sign_in_count
-  # filter :created_at
+  filter :first_name
+  filter :last_name
+  filter :email
+  filter :phone_number
 
   form do |f|
     f.inputs do

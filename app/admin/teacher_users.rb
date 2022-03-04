@@ -80,6 +80,7 @@ ActiveAdmin.register TeacherUser do
       row :class_instances do
         link_to "Class Instances"
       end
+      active_admin_comments
     end
   end
   

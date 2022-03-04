@@ -70,6 +70,7 @@ ActiveAdmin.register ClassSeries do
         row :class_instances do
           link_to "Class Instanes"
         end
+        active_admin_comments
       end
     end
 end

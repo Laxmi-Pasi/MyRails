@@ -1,4 +1,8 @@
 class TeacherUser < ApplicationRecord
+  # Include default devise modules. Others available are:
+  # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :validatable,:confirmable
   has_one_attached :profile_photo
   validates :first_name, :last_name, :email, :bio, :degree,:password,:password_confirmation, presence: true
   validates :email, uniqueness: true, format: { with: URI::MailTo::EMAIL_REGEXP }
